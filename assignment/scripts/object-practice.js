@@ -13,7 +13,8 @@ const me = {
   lastName: ' Jama',
   hasSiblings: true,
   shoeCount: 5,
-  favThreeFoods: ['pasta','xalwad','pizza']
+  favThreeFoods: ['pasta','xalwad','pizza'],
+  favoriteColor:'blue',
   // TODO - add properties here
 };
 console.log('A little about me:', me);
@@ -32,6 +33,7 @@ console.log('My full name is:', fullName);
   - Console.log your first favorite food
   - Console.log your last favorite food 
 */
+console.log('My first and last favorite foods are:', me.favThreeFoods[0],'and' ,me.favThreeFoods[2]);
 
 
 
@@ -40,7 +42,10 @@ console.log('My full name is:', fullName);
   - Guess what?! You just got a new pair of shoes!!!
   - Set your object's shoeCount to be what it was plus 1
   - Console.log your updated shoe count. 
-*/
+*/console.log('my current shoe count:', me.shoeCount);
+me.shoeCount +=1;
+console.log('got new shoes!');
+console.log('my new shoe count:', me.shoeCount);
 
 
 /* 5. Add a new property to an existing object.
@@ -49,3 +54,12 @@ console.log('My full name is:', fullName);
   - Cool huh? It works, even though it wasn't there before
   - Console.log your object
 */
+console.log('my favorite color:', me.favoriteColor);
+console.log(me);
+
+
+function appendToDom(obj){
+const meInfo =document.querySelector(`#me-info`);
+meInfo.innerHTML += `<div> Checking: I have ${obj.shoeCount} pairs of shoes.`;
+}
+appendToDom(me);
